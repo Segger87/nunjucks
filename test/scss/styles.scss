@@ -1,6 +1,22 @@
 body {
   background: pink;
-  height: 100%;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  &-list {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  a {
+    margin-right: 2rem;
+  }
 }
 
 .main-container {

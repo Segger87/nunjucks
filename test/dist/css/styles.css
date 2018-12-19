@@ -1,6 +1,17 @@
 body {
-  background: pink;
-  height: 100%; }
+  background: pink; }
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; }
+  .navbar-list {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-evenly; }
+  .navbar a {
+    margin-right: 2rem; }
 
 .main-container {
   background: brown; }
