@@ -2,6 +2,11 @@ const gulp = require("gulp");
 const nunjucks = require("gulp-nunjucks");
 const sass = require("gulp-sass");
 const browserSync = require("browser-sync").create();
+const paths = {
+  dist: "./test/dist"
+};
+
+nunjucks.configure;
 
 gulp.task("sass", () =>
   gulp
@@ -13,7 +18,7 @@ gulp.task("sass", () =>
 
 gulp.task("default", () =>
   gulp
-    .src("test/index.html")
+    .src("test/**/*.html")
     .pipe(
       nunjucks.compile({
         title: "Playing with Nunjucks",
@@ -22,7 +27,7 @@ gulp.task("default", () =>
         items: ["item 1", "item 2", "item 3"]
       })
     )
-    .pipe(gulp.dest("test/dist"))
+    .pipe(gulp.dest(paths.dist))
 );
 
 gulp.task(
@@ -32,8 +37,8 @@ gulp.task(
       server: "./test/dist"
     }),
   gulp.watch("test/scss/**/*.scss", gulp.series("sass")),
-  gulp.watch("test/index.html", gulp.series("default")),
+  // gulp.watch("test/**/*.html", gulp.series("default")),
   gulp.watch("test/*.html").on("change", browserSync.reload)
 );
 
-gulp.task("run", gulp.parallel("sass", "serve", "default"));
+gulp.task("run", gulp.parallel("sass", "serve"));

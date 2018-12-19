@@ -1,3 +1,7 @@
 <nav>
-    <h1>this is a nav bar</h1>
+    <ul>
+        {% for nav in navbar %}
+        <li><a href="../dist/{{nav}}.html">{{nav}}</a></li>
+        {% endfor %}
+    </ul>    
 </nav>
