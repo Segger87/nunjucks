@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+
+  <body>
+
+  {% include "templates/navbar.njk" %}
+
+  {% include "templates/navbar.njk" %}
+
+<div class="main-container">
+    <p>I LIKE {{animals}}</p>
+    <p>Dinner is: {{dinner}}</p>
+</div>
+bobby
+    <ul>
+     {% for item in items %}
+      <li>{{item}}</li>
+     {% endfor %}
+    </ul>
+    
+     {% include "templates/footer.njk" %}
+  </body>
+</html>
