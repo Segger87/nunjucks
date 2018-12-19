@@ -18,7 +18,7 @@ gulp.task("sass", () =>
 
 gulp.task("default", () =>
   gulp
-    .src("test/**/*.html")
+    .src("test/*.html")
     .pipe(
       nunjucks.compile({
         title: "Playing with Nunjucks",
@@ -37,7 +37,7 @@ gulp.task(
       server: "./test/dist"
     }),
   gulp.watch("test/scss/**/*.scss", gulp.series("sass")),
-  // gulp.watch("test/**/*.html", gulp.series("default")),
+  gulp.watch("test/*.html", gulp.series("default")),
   gulp.watch("test/*.html").on("change", browserSync.reload)
 );
 
